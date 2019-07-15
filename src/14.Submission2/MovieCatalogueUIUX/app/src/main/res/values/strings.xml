@@ -14,6 +14,7 @@
     <string name="detail_tv_show">Detail Tv Show</string>
     <string name="bahasa_indonesia">Indonesia</string>
     <string name="bahasa_english">English</string>
+    <string name="language_settings">Language Settings</string>
     <string name="change_language_settings">Change Language Settings</string>
 
     <string-array name="movies_name">

@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Movie Catalogue (UI/UX)</string>
+    <string name="app_name">Katalog Film (UI/UX)</string>
 
-    <string name="tab_movies">Movies</string>
-    <string name="tab_tv_shows">Tv Shows</string>
+    <string name="tab_movies">Film</string>
+    <string name="tab_tv_shows">Serial TV</string>
 
     <string name="movie_name">Nama Film</string>
     <string name="overview">Sinopsis</string>
@@ -10,10 +10,11 @@
     <string name="description">Deskripsi</string>
     <string name="featured_crew">Kru Unggulan</string>
     <string name="crew">Kru</string>
-    <string name="detail_movie">Detail Movie</string>
-    <string name="detail_tv_show">Detail Tv Show</string>
+    <string name="detail_movie">Rincian Film</string>
+    <string name="detail_tv_show">Rincian Serial TV</string>
     <string name="bahasa_indonesia">Indonesia</string>
     <string name="bahasa_english">English</string>
+    <string name="language_settings">Pengaturan Bahasa</string>
     <string name="change_language_settings">Ubah Pengaturan Bahasa</string>
 
     <string-array name="movies_name">

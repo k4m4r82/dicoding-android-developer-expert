@@ -21,6 +21,7 @@ public class DetailTvShowActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_tv_show);
 
         localeManager = new LocaleManager(this);
+        localeManager.setLocale(this);
 
         if (getSupportActionBar() != null)
             getSupportActionBar().setTitle(getResources().getString(R.string.detail_tv_show));
@@ -29,8 +30,6 @@ public class DetailTvShowActivity extends AppCompatActivity {
 
         ViewHolder viewHolder = new ViewHolder();
         viewHolder.Bind(tvShow);
-
-        localeManager.setLocale(this);
     }
 
     private class ViewHolder {

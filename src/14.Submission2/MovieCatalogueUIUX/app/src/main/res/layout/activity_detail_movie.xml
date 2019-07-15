@@ -84,8 +84,6 @@
         android:text="@string/crew"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />" Fisk uses a super collider, others from across the Spider-Verse are transported to this dimension."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
 </android.support.constraint.ConstraintLayout>

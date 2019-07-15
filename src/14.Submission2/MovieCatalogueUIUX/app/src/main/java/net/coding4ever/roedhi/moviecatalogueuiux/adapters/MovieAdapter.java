@@ -49,7 +49,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
         Glide.with(context)
                 .load(listMovie.get(position).getPhoto())
-                //.apply(new RequestOptions().override(55, 55))
                 .into(holder.imgPhoto);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

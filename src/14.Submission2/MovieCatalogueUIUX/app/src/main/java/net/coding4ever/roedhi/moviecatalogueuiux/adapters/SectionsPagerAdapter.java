@@ -31,11 +31,11 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         Fragment fragment = null;
 
         switch (position) {
-            case 0: // movie fragment
+            case 0:
                 fragment = new MovieFragment();
                 break;
 
-            case 1: // tv show fragment
+            case 1:
                 fragment = new TvShowFragment();
                 break;
         }

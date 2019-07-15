@@ -8,7 +8,7 @@ import android.widget.RadioGroup;
 import net.coding4ever.roedhi.moviecatalogueuiux.R;
 import net.coding4ever.roedhi.moviecatalogueuiux.helpers.LocaleManager;
 
-public class PengaturanBahasaActivity extends AppCompatActivity {
+public class LanguageSettingsActivity extends AppCompatActivity {
 
     public static int RESULT_CODE = 110;
     LocaleManager localeManager;
@@ -16,9 +16,13 @@ public class PengaturanBahasaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pengaturan_bahasa);
+        setContentView(R.layout.activity_language_settings);
 
         localeManager = new LocaleManager(this);
+        localeManager.setLocale(this);
+
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setTitle(getResources().getString(R.string.language_settings));
 
         final RadioGroup rgLanguage = findViewById(R.id.rg_language);
 
@@ -35,9 +39,9 @@ public class PengaturanBahasaActivity extends AppCompatActivity {
                 RadioButton radioButton = rgLanguage.findViewById(selectedRadioButtonID);
 
                 if (rgLanguage.indexOfChild(radioButton) == 0) { // bahasa indonesia
-                    localeManager.setNewLocale(PengaturanBahasaActivity.this, LocaleManager.LANGUAGE_INDONESIA);
+                    localeManager.setNewLocale(LanguageSettingsActivity.this, LocaleManager.LANGUAGE_INDONESIA);
                 } else {
-                    localeManager.setNewLocale(PengaturanBahasaActivity.this, LocaleManager.LANGUAGE_ENGLISH);
+                    localeManager.setNewLocale(LanguageSettingsActivity.this, LocaleManager.LANGUAGE_ENGLISH);
                 }
 
                 setResult(RESULT_CODE);

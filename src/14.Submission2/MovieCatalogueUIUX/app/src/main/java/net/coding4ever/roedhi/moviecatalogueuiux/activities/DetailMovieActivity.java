@@ -20,6 +20,7 @@ public class DetailMovieActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_movie);
         localeManager = new LocaleManager(this);
+        localeManager.setLocale(this);
 
         if (getSupportActionBar() != null)
             getSupportActionBar().setTitle(getResources().getString(R.string.detail_movie));
@@ -28,8 +29,6 @@ public class DetailMovieActivity extends AppCompatActivity {
 
         ViewHolder viewHolder = new ViewHolder();
         viewHolder.Bind(movie);
-
-        localeManager.setLocale(this);
     }
 
     private class ViewHolder {

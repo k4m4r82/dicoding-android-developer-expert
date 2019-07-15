@@ -25,9 +25,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         localeManager = new LocaleManager(this);
+        localeManager.setLocale(this);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setTitle(getResources().getString(R.string.app_name));
 
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
 
@@ -36,8 +40,6 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
-
-        localeManager.setLocale(this);
     }
 
     @Override
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_change_settings){
-            Intent intent = new Intent(this, PengaturanBahasaActivity.class);
+            Intent intent = new Intent(this, LanguageSettingsActivity.class);
             startActivityForResult(intent, REQUEST_CODE);
         }
 
@@ -61,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == REQUEST_CODE) {
-            if (resultCode == PengaturanBahasaActivity.RESULT_CODE) {
+            if (resultCode == LanguageSettingsActivity.RESULT_CODE) {
                 recreate();
                 localeManager.setLocale(this);
             }
