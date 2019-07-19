@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Katalog Film API</string>
+
+    <string name="language_id">id</string>
+    <string name="language_settings">Pengaturan Bahasa</string>
+    <string name="change_language_settings">Ubah Pengaturan Bahasa</string>
+    <string name="load_data_failed">Memuat data gagal, cek koneksi internet Anda!</string>
+
+    <string name="tab_movies">Film</string>
+    <string name="tab_tv_shows">Serial TV</string>
+
+    <string name="title">Judul Film</string>
+    <string name="overview">Sinopsis</string>
+    <string name="vote">Vote Average</string>
+    <string name="detail_movie">Rincian Film</string>
+    <string name="detail_tv_show">Rincian Serial TV</string>
+    <string name="release_date">Tanggal Rilis</string>
+    <string name="first_air_date">Pertama Kali Mengudara</string>
+</resources>

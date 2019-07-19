@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Movie Catalogue API</string>
+
+    <string name="the_moviedb_base_api">https://api.themoviedb.org/3/discover/</string>
+    <string name="poster_image_url">https://image.tmdb.org/t/p/w92</string>
+
+    <string name="bahasa_indonesia">Indonesia</string>
+    <string name="bahasa_english">English</string>
+
+    <string name="language_id">en-US</string>
+    <string name="language_settings">Language Settings</string>
+    <string name="change_language_settings">Change Language Settings</string>
+    <string name="load_data_failed">Loading failed, check your internet connection!</string>
+
+    <string name="tab_movies">Movies</string>
+    <string name="tab_tv_shows">Tv Shows</string>
+
+    <string name="title">Movie Title</string>
+    <string name="overview">Overview</string>
+    <string name="vote">Vote Average</string>
+    <string name="detail_movie">Detail Movie</string>
+    <string name="detail_tv_show">Detail Tv Show</string>
+    <string name="release_date">Release Date</string>
+    <string name="first_air_date">First Air Date</string>
+</resources>
