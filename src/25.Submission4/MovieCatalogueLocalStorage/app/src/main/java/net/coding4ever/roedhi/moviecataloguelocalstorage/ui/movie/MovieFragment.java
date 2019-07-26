@@ -1,4 +1,4 @@
-package net.coding4ever.roedhi.moviecatalogueapi.fragments;
+package net.coding4ever.roedhi.moviecataloguelocalstorage.ui.movie;
 
 
 import android.content.Context;
@@ -14,26 +14,28 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import net.coding4ever.roedhi.moviecatalogueapi.R;
-import net.coding4ever.roedhi.moviecatalogueapi.activities.DetailMovieActivity;
-import net.coding4ever.roedhi.moviecatalogueapi.adapter.MovieAdapter;
-import net.coding4ever.roedhi.moviecatalogueapi.listeners.OnItemClickCallback;
-import net.coding4ever.roedhi.moviecatalogueapi.listeners.ProgressBarCallback;
-import net.coding4ever.roedhi.moviecatalogueapi.models.Movie;
-import net.coding4ever.roedhi.moviecatalogueapi.presenters.MovieFragmentPresenter;
+import net.coding4ever.roedhi.moviecataloguelocalstorage.R;
+import net.coding4ever.roedhi.moviecataloguelocalstorage.listeners.OnItemClickCallback;
+import net.coding4ever.roedhi.moviecataloguelocalstorage.listeners.ProgressBarCallback;
+import net.coding4ever.roedhi.moviecataloguelocalstorage.models.Movie;
+import net.coding4ever.roedhi.moviecataloguelocalstorage.ui.BaseView;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MovieFragment extends Fragment
-        implements net.coding4ever.roedhi.moviecatalogueapi.views.View<Movie> {
+public class MovieFragment extends Fragment implements BaseView<Movie> {
+
+    @BindView(R.id.rv_movie) RecyclerView recyclerView;
 
     private static final String STATE_RESULT = "state_result";
-    private RecyclerView rvMovie;
-    private MovieFragmentPresenter presenter;
-    private MovieAdapter listMovieAdapter;
+    private MoviePresenter presenter;
+    private MovieAdapter adapter;
     private Context context;
 
     public MovieFragment() {
@@ -59,39 +61,45 @@ public class MovieFragment extends Fragment
 
         initializeView(view);
 
-        listMovieAdapter = new MovieAdapter(context);
-        listMovieAdapter.setOnItemClickCallback(new OnItemClickCallback<Movie>() {
+        adapter = new MovieAdapter(context);
+        adapter.setItemClickListener(new OnItemClickCallback<Movie>() {
             @Override
             public void onItemClicked(Movie movie) {
 
                 showLoading(true);
 
-                Intent detailMovieIntent = new Intent(context, DetailMovieActivity.class);
-                detailMovieIntent.putExtra(DetailMovieActivity.EXTRA_MOVIE, movie);
+                Intent detailIntent = new Intent(context, DetailMovieActivity.class);
+                detailIntent.putExtra(DetailMovieActivity.EXTRA_MOVIE, movie);
 
-                startActivity(detailMovieIntent);
+                startActivity(detailIntent);
             }
         });
 
-        rvMovie.setAdapter(listMovieAdapter);
+        recyclerView.setAdapter(adapter);
 
         if (savedInstanceState != null) {
             ArrayList<Movie> stateResultList = savedInstanceState.getParcelableArrayList(STATE_RESULT);
-            listMovieAdapter.setListOfMovie(stateResultList);
+            adapter.setItems(stateResultList);
         } else {
-            presenter = new MovieFragmentPresenter(this, context);
-            presenter.loadMovies();
+            presenter = new MoviePresenter(this, context);
+            presenter.loadData();
 
             showLoading(true);
         }
     }
 
-    @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
-        outState.putParcelableArrayList(STATE_RESULT, listMovieAdapter.getListOfMovie());
-        super.onSaveInstanceState(outState);
+    private void initializeView(View view) {
+        ButterKnife.bind(this, view);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        recyclerView.setHasFixedSize(true);
     }
 
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putParcelableArrayList(STATE_RESULT, (ArrayList<Movie>) adapter.getItems());
+        super.onSaveInstanceState(outState);
+    }
 
     @Override
     public void onStop() {
@@ -100,26 +108,20 @@ public class MovieFragment extends Fragment
         showLoading(false);
     }
 
-    private void initializeView(View view) {
-        rvMovie = view.findViewById(R.id.rv_movie);
-        rvMovie.setLayoutManager(new LinearLayoutManager(context));
-        rvMovie.setHasFixedSize(true);
-    }
-
     @Override
-    public void onLoadDataSucceed(ArrayList<Movie> list) {
-        listMovieAdapter.setListOfMovie(list);
+    public void onLoadDataSucceed(List<Movie> list) {
+        adapter.setItems(list);
+
         showLoading(false);
     }
 
     @Override
     public void onLoadDataFailure() {
-        Toast.makeText(context, context.getResources().getString(R.string.load_data_failed), Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, context.getResources().getString(R.string.msg_load_data_failed), Toast.LENGTH_SHORT).show();
         showLoading(false);
     }
 
     private void showLoading(Boolean state) {
         ((ProgressBarCallback)context).showLoading(state);
     }
-
 }

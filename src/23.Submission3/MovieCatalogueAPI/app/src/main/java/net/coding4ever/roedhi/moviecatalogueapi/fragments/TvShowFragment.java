@@ -34,7 +34,6 @@ public class TvShowFragment extends Fragment
     private RecyclerView rvMovie;
     private TvShowFragmentPresenter presenter;
     private TvShowAdapter listTvShowAdapter;
-    private ArrayList<TvShow> stateResultList;
     private Context context;
 
     public TvShowFragment() {
@@ -76,21 +75,20 @@ public class TvShowFragment extends Fragment
         rvMovie.setAdapter(listTvShowAdapter);
 
         if (savedInstanceState != null) {
-            stateResultList = savedInstanceState.getParcelableArrayList(STATE_RESULT);
+            ArrayList<TvShow>  stateResultList = savedInstanceState.getParcelableArrayList(STATE_RESULT);
+            listTvShowAdapter.setListOfTvShow(stateResultList);
+        } else {
+            presenter = new TvShowFragmentPresenter(this, context);
+            presenter.loadTvShow();
+
+            showLoading(true);
         }
-
-        presenter = new TvShowFragmentPresenter(this, context);
-        presenter.loadTvShow();
-
-        showLoading(true);
     }
+
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
-        if (listTvShowAdapter.getListOfTvShow() != null) {
-            outState.putParcelableArrayList(STATE_RESULT, listTvShowAdapter.getListOfTvShow());
-        }
-
+        outState.putParcelableArrayList(STATE_RESULT, listTvShowAdapter.getListOfTvShow());
         super.onSaveInstanceState(outState);
     }
 
@@ -115,12 +113,7 @@ public class TvShowFragment extends Fragment
 
     @Override
     public void onLoadDataFailure() {
-        if (stateResultList != null) {
-            listTvShowAdapter.setListOfTvShow(stateResultList);
-        } else {
-            Toast.makeText(context, context.getResources().getString(R.string.load_data_failed), Toast.LENGTH_SHORT).show();
-        }
-
+        Toast.makeText(context, context.getResources().getString(R.string.load_data_failed), Toast.LENGTH_SHORT).show();
         showLoading(false);
     }
 
