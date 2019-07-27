@@ -23,6 +23,8 @@
     <string name="tab_tv_shows">Serial TV</string>
 
     <string name="title">Judul Film</string>
+    <string name="movie_poster">Poster Film</string>
+    <string name="tv_poster">Poster Serial TV</string>
     <string name="overview">Sinopsis</string>
     <string name="vote">Vote Average</string>
     <string name="detail_movie">Rincian Film</string>

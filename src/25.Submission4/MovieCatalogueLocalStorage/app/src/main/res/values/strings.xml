@@ -28,6 +28,8 @@
     <string name="tab_tv_shows">Tv Shows</string>
 
     <string name="title">Movie Title</string>
+    <string name="movie_poster">Movie Poster</string>
+    <string name="tv_poster">Tv Show Poster</string>
     <string name="overview">Overview</string>
     <string name="vote">Vote Average</string>
     <string name="detail_movie">Detail Movie</string>

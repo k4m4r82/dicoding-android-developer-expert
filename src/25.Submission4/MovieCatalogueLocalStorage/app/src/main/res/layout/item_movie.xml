@@ -8,6 +8,7 @@
         android:id="@+id/img_poster"
         android:layout_width="80dp"
         android:layout_height="86dp"
+        android:contentDescription="@string/movie_poster"
         android:scaleType="fitXY" />
     <TextView
         android:id="@+id/txt_title"
