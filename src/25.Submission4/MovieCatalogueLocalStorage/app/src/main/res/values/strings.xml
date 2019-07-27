@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Movie Catalogue Local Storage</string>
 
-    <string name="the_moviedb_base_api">https://api.themoviedb.org/3/discover/</string>
-    <string name="poster_image_url">https://image.tmdb.org/t/p/w92</string>
+    <string name="the_moviedb_base_api" translatable="false">https://api.themoviedb.org/3/discover/</string>
+    <string name="poster_image_url" translatable="false">https://image.tmdb.org/t/p/w92</string>
 
-    <string name="bahasa_indonesia">Indonesia</string>
-    <string name="bahasa_english">English</string>
+    <string name="bahasa_indonesia" translatable="false">Indonesia</string>
+    <string name="bahasa_english" translatable="false">English</string>
 
     <string name="language_id">en-US</string>
     <string name="language_settings">Language Settings</string>

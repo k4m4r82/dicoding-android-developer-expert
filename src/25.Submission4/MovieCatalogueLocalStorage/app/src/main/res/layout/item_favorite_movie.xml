@@ -26,7 +26,7 @@
         android:layout_below="@id/txt_title"
         android:layout_marginStart="26dp"
         android:layout_marginTop="10dp"
-        android:layout_toRightOf="@id/img_poster"
+        android:layout_toEndOf="@id/img_poster"
         android:ellipsize="end"
         android:maxLines="3"
         android:text="@string/overview" />
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txt_overview"
         android:layout_marginStart="26dp"
-        android:layout_toRightOf="@id/img_poster"
+        android:layout_toEndOf="@id/img_poster"
         android:text="@string/remove_favorite" />
 
 </RelativeLayout>

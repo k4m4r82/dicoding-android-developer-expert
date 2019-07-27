@@ -10,6 +10,5 @@ tools:context=".ui.tvshow.TvShowFragment">
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:listitem="@layout/item_movie" />
-android:text="Ini Fragment Tv Show" />
 
 </FrameLayout>

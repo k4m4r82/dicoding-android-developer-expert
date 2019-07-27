@@ -34,9 +34,7 @@ public class LocaleManager {
     }
 
     private void persistLanguage(String language) {
-        // use commit() instead of apply(), because sometimes we kill the application process immediately
-        // which will prevent apply() to finish
-        prefs.edit().putString(LANGUAGE_KEY, language).commit();
+        prefs.edit().putString(LANGUAGE_KEY, language).apply();
     }
 
     private void updateResources(Context context, String language) {
