@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Katalog Film</string>
+
+    <string name="language_id">id</string>
+    <string name="language_settings">Pengaturan Bahasa</string>
+    <string name="remainder_settings">Pengaturan Pengingat</string>
+    <string name="change_language_settings_menu">Ubah Pengaturan Bahasa</string>
+    <string name="change_remainder_settings_menu">Ubah Pengaturan Pengingat</string>
+
+    <string name="daily_reminder">Pengingat Harian</string>
+    <string name="msg_daily_reminder">Hai, cek aplikasi movie Anda</string>
+    <string name="daily_reminder_setup">Pengingat harian sudah diatur</string>
+    <string name="daily_reminder_cancel">Pengingat harian dibatalkan</string>
+
+    <string name="release_today_reminder">Pengingat Rilis Hari ini</string>
+    <string name="release_today_reminder_setup">Pengingat rilis hari ini sudah diatur</string>
+    <string name="release_today_reminder_cancel">Pengingat rilis harian ini dibatalkan</string>
+
+    <string name="save">Simpan</string>
+    <string name="favorite_menu">Favorit</string>
+    <string name="search_menu">Pencarian</string>
+    <string name="search_hint">Masukkan kata</string>
+    <string name="remove_favorite">Hapus</string>
+
+    <string name="msg_add_favorite_movie">Film berhasil ditambahkan ke dalam daftar favorit</string>
+    <string name="msg_add_favorite_tv_show">Serial TV berhasil ditambahkan ke dalam daftar favorit</string>
+
+    <string name="msg_failed_add_favorite_movie">Film gagal ditambahkan ke daftar favorit</string>
+    <string name="msg_failed_add_favorite_tv_show">Serial TV gagal ditambahkan ke daftar favorit</string>
+
+    <string name="msg_remove_favorite_movie">Film berhasil dihapus dari daftar favorit</string>
+    <string name="msg_remove_favorite_tv_show">Serial TV berhasil dihapus dari daftar favorit</string>
+
+    <string name="msg_load_data_failed">Memuat data gagal, cek koneksi internet Anda!</string>
+
+    <string name="empty_text">Data kosong</string>
+
+    <string name="tab_movies">Film</string>
+    <string name="tab_tv_shows">Serial TV</string>
+
+    <string name="title">Judul Film</string>
+    <string name="movie_poster">Poster Film</string>
+    <string name="tv_poster">Poster Serial TV</string>
+    <string name="overview">Sinopsis</string>
+    <string name="vote">Vote Average</string>
+    <string name="detail_movie">Rincian Film</string>
+    <string name="detail_tv_show">Rincian Serial TV</string>
+    <string name="release_date">Tanggal Rilis</string>
+    <string name="first_air_date">Pertama Kali Mengudara</string>
+</resources>

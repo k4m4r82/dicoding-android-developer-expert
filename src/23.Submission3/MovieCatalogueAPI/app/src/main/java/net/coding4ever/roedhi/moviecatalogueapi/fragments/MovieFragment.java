@@ -34,7 +34,6 @@ public class MovieFragment extends Fragment
     private RecyclerView rvMovie;
     private MovieFragmentPresenter presenter;
     private MovieAdapter listMovieAdapter;
-    private ArrayList<Movie> stateResultList;
     private Context context;
 
     public MovieFragment() {
@@ -77,21 +76,19 @@ public class MovieFragment extends Fragment
         rvMovie.setAdapter(listMovieAdapter);
 
         if (savedInstanceState != null) {
-            stateResultList = savedInstanceState.getParcelableArrayList(STATE_RESULT);
+            ArrayList<Movie> stateResultList = savedInstanceState.getParcelableArrayList(STATE_RESULT);
+            listMovieAdapter.setListOfMovie(stateResultList);
+        } else {
+            presenter = new MovieFragmentPresenter(this, context);
+            presenter.loadMovies();
+
+            showLoading(true);
         }
-
-        presenter = new MovieFragmentPresenter(this, context);
-        presenter.loadMovies();
-
-        showLoading(true);
     }
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
-        if (listMovieAdapter.getListOfMovie() != null) {
-            outState.putParcelableArrayList(STATE_RESULT, listMovieAdapter.getListOfMovie());
-        }
-
+        outState.putParcelableArrayList(STATE_RESULT, listMovieAdapter.getListOfMovie());
         super.onSaveInstanceState(outState);
     }
 
@@ -117,12 +114,7 @@ public class MovieFragment extends Fragment
 
     @Override
     public void onLoadDataFailure() {
-        if (stateResultList != null) {
-            listMovieAdapter.setListOfMovie(stateResultList);
-        } else {
-            Toast.makeText(context, context.getResources().getString(R.string.load_data_failed), Toast.LENGTH_SHORT).show();
-        }
-
+        Toast.makeText(context, context.getResources().getString(R.string.load_data_failed), Toast.LENGTH_SHORT).show();
         showLoading(false);
     }
 

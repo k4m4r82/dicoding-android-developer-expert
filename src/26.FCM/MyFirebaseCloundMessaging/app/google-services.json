@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "745587761729",
+    "firebase_url": "https://myfirebasecloundmessagin-cd6bc.firebaseio.com",
+    "project_id": "myfirebasecloundmessagin-cd6bc",
+    "storage_bucket": "myfirebasecloundmessagin-cd6bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:745587761729:android:f425e72a41d6df5c",
+        "android_client_info": {
+          "package_name": "net.coding4ever.roedhi.myfirebasecloundmessaging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "745587761729-o6ntm4ds8gatv3g2ai8fhmrsshhk6r0o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.coding4ever.roedhi.myfirebasecloundmessaging",
+            "certificate_hash": "d3ae347115b7ef971b5ddd67bcf925836bbded78"
+          }
+        },
+        {
+          "client_id": "745587761729-rmsm9gcr5078ch8n09pvdm5tj3hq5h7p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-yzMfSESaN0hTqr4i0jtWuVd05ALKbbQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "745587761729-rmsm9gcr5078ch8n09pvdm5tj3hq5h7p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
